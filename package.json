@@ -1,0 +1,31 @@
+{
+  "name": "sanauth-erc20",
+  "version": "0.0.1",
+  "description": "Editing the existing token and performing air drop with help of ropsten network and upgrading in zepplin os",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Meegada-Mahesh/SANAUTH-ERC20.git"
+  },
+  "keywords": [
+    "Airdrop",
+    "ZeppelinOs",
+    "Ropsten"
+  ],
+  "author": "Meegada Mahesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Meegada-Mahesh/SANAUTH-ERC20/issues"
+  },
+  "homepage": "https://github.com/Meegada-Mahesh/SANAUTH-ERC20#readme",
+  "dependencies": {
+    "truffle-hdwallet-provider": "0.0.6"
+  }
+}
