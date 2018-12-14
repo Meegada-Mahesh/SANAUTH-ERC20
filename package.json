@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/Meegada-Mahesh/SANAUTH-ERC20#readme",
   "dependencies": {
+    "openzeppelin-solidity": "^2.0.0",
     "truffle-hdwallet-provider": "0.0.6"
   }
 }
