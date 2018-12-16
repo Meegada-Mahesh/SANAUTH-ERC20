@@ -12,7 +12,7 @@
  *   },
  */
 var HDWalletProvider = require("truffle-hdwallet-provider");
-const MNEMONIC = 'hold senior ordinary bottom toy solution final what term team medal valley';
+const MNEMONIC = 'YOUR METAMASK ACCOUNT MNEMONIC';
 
 module.exports = {
   networks: {
@@ -23,7 +23,7 @@ module.exports = {
     },
     ropsten: {
       provider: function() {
-        return new HDWalletProvider(MNEMONIC, "https://ropsten.infura.io/v3/cc09b4ea45f24de2bb0fd376fa8203fb")
+        return new HDWalletProvider(MNEMONIC, "https://ropsten.infura.io/v3/YOUR_INFURA_ID")
       },
       network_id: 3,
       gas: 4000000      //make sure this gas allocation isn't over 4M, which is the max

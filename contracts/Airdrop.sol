@@ -1,22 +1,36 @@
 pragma solidity ^0.4.24;
 
-import "../node_modules/openzeppelin-solidity/contracts/ownership/Ownable.sol";
-//import "../node_modules/openzeppelin-solidity/contracts/ownership/CanReclaimToken.sol";
+import "./Token.sol";
 
-contract Airdrop is Ownable {
-  /**
-   * @dev do Airdrop to address
-   * @param _tokenAddr address the erc20 token address
-   * @param dests address[] addresses to airdrop
-   * @param values uint256[] value(in ether) to airdrop
-   */
-   function doAirdrop(address _tokenAddr, address[] dests, uint256[] values) onlyOwner public
-    returns (uint256) {
-    uint256 i = 0;
-    while (i < dests.length) {
-      ERC20(_tokenAddr).transferFrom(msg.sender, dests[i], values[i] * (10 ** 18));
-      i += 1;
+contract Airdrop {
+
+    address public owner;
+    Token public mytoken;
+
+    constructor(address tokenAddress) public {
+        owner = msg.sender;
+        mytoken = Token(tokenAddress);
     }
-    return(i);
-  }
+
+    modifier onlyOwner()  {
+        require(msg.sender == owner,"Only owner is allowed to call this.");
+        _;
+    }
+
+    function transferOwnership(address newOwner) public onlyOwner {
+
+        if (newOwner != address(0)) {
+            owner = newOwner;
+        }
+    }
+
+    function airdrop (address airdropAddress, address[] airDropDesinationAddress, uint[] amounts) 
+        public onlyOwner{
+
+        for( uint i = 0 ; i < airDropDesinationAddress.length ; i++ ) {
+            //ERC20Interface(contractObj).transferFrom(tokenRepo, airDropDesinationAddress[i], amounts[i]);
+            mytoken.transferFrom(airdropAddress, airDropDesinationAddress[i], amounts[i]);
+            //mytoken.transfer(airDropDesinationAddress[i], amounts[i]);
+        }
+    }
 }

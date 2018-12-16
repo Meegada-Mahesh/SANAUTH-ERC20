@@ -1,5 +1,14 @@
 # Ignore a file called `package-lock.json`
 package-lock.json
 
+# Ignore a file called `truffle-config.js`
+truffle-config.js
+
 # Ignore folder named `node_modules`
 node_modules/
+
+# Igore folder named `build`
+build/
+
+# Igore folder named `test`
+test/
