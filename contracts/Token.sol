@@ -5,8 +5,8 @@ import "./BaseToken.sol";
 contract Token is BaseToken {
     
     // Constants
-    string  public constant name = "dart";
-    string  public constant symbol = "DART";
+    string  public constant name = "SANAUTH";
+    string  public constant symbol = "SANAUTH";
     uint8   public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY      =  2000000000 * (10 ** uint256(decimals));
